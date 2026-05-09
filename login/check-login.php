@@ -1,11 +1,12 @@
 <?php
 $login = 'admin';
-$pass = '123';
+$pass = 'Neutron86430';
 
 if ($login === ($_POST['login'] ?? '') && $pass === ($_POST['password'] ?? '')) {
     session_start();
-    $_SESSION['login'] = $_POST['login'];
-    $_SESSION['password'] = $_POST['password'];
+    session_regenerate_id(true);
+    $_SESSION['admin'] = true;
+    $_SESSION['login'] = $login;
     header('Location: ../admin/index.php');
     exit();
 }

@@ -1,8 +1,6 @@
 <?php
 session_start();
-$login = 'admin';
-$pass = '123';
-if (($_SESSION['login'] ?? '') !== $login || ($_SESSION['password'] ?? '') !== $pass) {
+if (empty($_SESSION['admin'])) {
     header('Location: ../login/index.php');
     exit();
 }
