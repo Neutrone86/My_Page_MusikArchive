@@ -15,17 +15,17 @@
             <div class="main-form">
                 <form class="login" action="check-login.php" method="post">
                     <h3>Вхід в адмін-панель</h3>
-                    <p class="text-muted">Логін: admin, пароль: 123</p>
+                    <p class="text-muted mb-4">Введіть дані адміністратора, щоб керувати музичним архівом.</p>
                     <?php if (isset($_GET['error'])): ?>
                         <div class="alert alert-danger">Невірний логін або пароль.</div>
                     <?php endif; ?>
                     <div class="form-group">
                         <label for="login">Логін</label>
-                        <input type="text" name="login" class="form-control" id="login" required>
+                        <input type="text" name="login" class="form-control" id="login" autocomplete="username" autofocus required>
                     </div>
                     <div class="form-group">
                         <label for="password">Пароль</label>
-                        <input type="password" name="password" class="form-control" id="password" required>
+                        <input type="password" name="password" class="form-control" id="password" autocomplete="current-password" required>
                     </div>
                     <button type="submit" class="btn btn-primary formbtn">Увійти</button>
                     <a href="../index.php" class="btn btn-link">На головну</a>
