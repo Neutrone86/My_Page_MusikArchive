@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650">
+  <rect width="1200" height="650" fill="#3a4750"/>
+  <path d="M320 160h560v360H320z" fill="#eeeeee"/>
+  <path d="M380 220h440" stroke="#303841" stroke-width="24"/>
+  <path d="M380 290h360" stroke="#00adb5" stroke-width="24"/>
+  <path d="M380 360h400" stroke="#303841" stroke-width="24"/>
+  <path d="M380 430h260" stroke="#00adb5" stroke-width="24"/>
+  <circle cx="850" cy="175" r="70" fill="#f6c90e"/>
+  <text x="600" y="600" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="52">Історія музики</text>
+</svg>

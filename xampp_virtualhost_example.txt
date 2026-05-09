@@ -1,0 +1,14 @@
+Приклад налаштування Apache VirtualHost:
+
+<VirtualHost *:80>
+    DocumentRoot "C:/xampp/htdocs/musicarchive.local/"
+    ServerName musicarchive.local
+    ServerAlias www.musicarchive.local
+    <Directory "C:/xampp/htdocs/musicarchive.local/">
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
+
+У файл hosts можна додати:
+127.0.0.1 musicarchive.local

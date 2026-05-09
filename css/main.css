@@ -1,0 +1,81 @@
+body {
+    background: #f5f6fa;
+    color: #222;
+}
+.site-hero {
+    background: linear-gradient(135deg, #222831, #393e46);
+    color: #fff;
+    padding: 90px 0;
+}
+.site-hero h1 {
+    font-size: 52px;
+    font-weight: 700;
+}
+.archive-card,
+.post-card,
+.sidebar-block,
+.main-form {
+    border: 0;
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    overflow: hidden;
+    background: #fff;
+}
+.archive-card .card-img-top {
+    height: 280px;
+    object-fit: cover;
+    background: #ddd;
+}
+.post-card .card-img-top {
+    height: 360px;
+    object-fit: cover;
+}
+.compact-card .card-body {
+    padding: 26px;
+}
+.sidebar-block {
+    padding: 24px;
+    position: sticky;
+    top: 85px;
+}
+.meta {
+    color: #6c757d;
+    font-size: 14px;
+}
+.footer {
+    background: #222831;
+    color: #e9ecef;
+}
+.login-page {
+    background: linear-gradient(135deg, #222831, #00adb5);
+}
+.main-form {
+    padding: 30px;
+}
+.admin-container {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+.action-buttons .btn {
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+a {
+    color: #0056b3;
+}
+.btn-primary {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+.btn-warning {
+    color: #212529;
+    font-weight: 600;
+}
+.table td,
+.table th {
+    vertical-align: middle;
+}
