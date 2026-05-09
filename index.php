@@ -21,11 +21,11 @@
     <div class="row">
         <div class="col-md-8">
             <?php $news = get_news(); ?>
-            <?php foreach ($news as $new): ?>
-                <?php $category = get_category_title($new['category_id']); ?>
-                <div class="card mb-4 archive-card">
-                    <img src="<?= e($new['image']); ?>" class="card-img-top" alt="Зображення запису">
-                    <div class="card-body">
+                <?php foreach ($news as $new): ?>
+                    <?php $category = get_category_title($new['category_id']); ?>
+                    <div class="card mb-4 archive-card">
+                        <img src="<?= e($new['image']); ?>" class="card-img-top" alt="Зображення запису">
+                        <div class="card-body">
                         <span class="badge badge-secondary mb-2"><?= e($category['name'] ?? 'Без категорії'); ?></span>
                         <h3 class="card-title"><a href="post.php?post_id=<?= e($new['id']); ?>"><?= e($new['header']); ?></a></h3>
                         <p class="meta">Виконавець: <?= e($new['artist'] ?? 'Невідомо'); ?> | Рік: <?= e($new['release_year'] ?? '-'); ?></p>
@@ -43,7 +43,7 @@
                     <?php foreach ($menus as $menu): ?>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <a href="category.php?category_id=<?= e($menu['id']); ?>"><?= e($menu['name']); ?></a>
-                            <span class="badge badge-dark badge-pill"><?= count(get_post_by_category($menu['id'])); ?></span>
+                            <span class="badge badge-dark badge-pill"><?= category_post_count($menu['id']); ?></span>
                         </li>
                     <?php endforeach; ?>
                 </ul>
