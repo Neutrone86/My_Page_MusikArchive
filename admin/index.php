@@ -17,7 +17,7 @@ $posts = get_post();
     <div class="row align-items-center mb-4">
         <div class="col-8">
             <h2>Адміністративна панель</h2>
-            <p class="text-muted">Керування записами сайту «Музичний архів»</p>
+            <p class="text-muted mb-0">Керування записами сайту «Музичний архів»</p>
         </div>
         <div class="col-4 text-right">
             <a href="../index.php" class="btn btn-outline-secondary">Сайт</a>
@@ -29,33 +29,40 @@ $posts = get_post();
     <?php endif; ?>
     <div class="row">
         <div class="col">
-            <table class="table table-striped table-bordered">
-                <thead class="thead-dark">
-                <tr>
-                    <th scope="col">№</th>
-                    <th scope="col">Назва запису</th>
-                    <th scope="col">Виконавець</th>
-                    <th scope="col">Категорія</th>
-                    <th scope="col">Дії</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php foreach ($posts as $post): ?>
-                    <?php $category = get_category_title($post['category_id']); ?>
+            <div class="admin-toolbar d-flex justify-content-between align-items-center mb-3">
+                <span class="text-muted">Усього записів: <?= count($posts); ?></span>
+                <a href="add-new.php" class="btn btn-success">Додати запис</a>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered admin-table">
+                    <thead class="thead-dark">
                     <tr>
-                        <th scope="row"><?= e($post['id']); ?></th>
-                        <td><?= e($post['header']); ?></td>
-                        <td><?= e($post['artist'] ?? '-'); ?></td>
-                        <td><?= e($category['name'] ?? '-'); ?></td>
-                        <td class="action-buttons">
-                            <a href="edit-new.php?post_id=<?= e($post['id']); ?>" class="btn btn-info btn-sm">Редагувати</a>
-                            <a href="delete-new.php?post_id=<?= e($post['id']); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Видалити запис?')">Видалити</a>
-                        </td>
+                        <th scope="col">№</th>
+                        <th scope="col">Назва запису</th>
+                        <th scope="col">Виконавець</th>
+                        <th scope="col">Категорія</th>
+                        <th scope="col">Дії</th>
                     </tr>
-                <?php endforeach; ?>
-                </tbody>
-            </table>
-            <a href="add-new.php" class="btn btn-success">Додати запис</a>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($posts as $post): ?>
+                        <?php $category = get_category_title($post['category_id']); ?>
+                        <tr>
+                            <th scope="row"><?= e($post['id']); ?></th>
+                            <td><?= e($post['header']); ?></td>
+                            <td><?= e($post['artist'] ?? '-'); ?></td>
+                            <td><?= e($category['name'] ?? '-'); ?></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a href="edit-new.php?post_id=<?= e($post['id']); ?>" class="btn btn-info btn-sm">Редагувати</a>
+                                    <a href="delete-new.php?post_id=<?= e($post['id']); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Видалити запис?')">Видалити</a>
+                                </div>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
