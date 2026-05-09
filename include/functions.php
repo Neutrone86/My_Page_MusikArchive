@@ -171,6 +171,19 @@ function get_category_title($category_id) {
     return null;
 }
 
+function category_post_count($category_id) {
+    global $pdo, $dbAvailable;
+    $category_id = (int)$category_id;
+    if ($dbAvailable) {
+        $stmt = $pdo->prepare('SELECT COUNT(*) FROM news WHERE category_id = ?');
+        $stmt->execute([$category_id]);
+        return (int)$stmt->fetchColumn();
+    }
+    return count(array_filter(read_storage()['news'], function($post) use ($category_id) {
+        return (int)$post['category_id'] === $category_id;
+    }));
+}
+
 function text_length($text) {
     return function_exists('mb_strlen') ? mb_strlen($text, 'UTF-8') : strlen($text);
 }
