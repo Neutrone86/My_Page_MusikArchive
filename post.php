@@ -18,7 +18,10 @@ $post = get_post_by_id($post_id);
                 <h1 class="card-title"><?= e($post['header']); ?></h1>
                 <p class="meta">Виконавець: <?= e($post['artist'] ?? 'Невідомо'); ?> | Рік: <?= e($post['release_year'] ?? '-'); ?> | Дата: <?= e($post['datatime']); ?></p>
                 <p class="card-text"><?= nl2br(e($post['content'])); ?></p>
-                <a href="index.php" class="btn btn-primary">Назад</a>
+                <div class="d-flex flex-wrap post-actions">
+                    <a href="index.php" class="btn btn-primary">До архіву</a>
+                    <a href="category.php?category_id=<?= e($post['category_id']); ?>" class="btn btn-outline-secondary">До категорії</a>
+                </div>
             </div>
         </div>
     <?php endif; ?>

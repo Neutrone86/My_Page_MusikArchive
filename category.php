@@ -11,7 +11,8 @@ $category = get_category_title($category_id);
     <div class="row">
         <div class="col-md-8">
             <h2><?= e($category['name'] ?? 'Категорія'); ?></h2>
-            <p class="text-muted"><?= e($category['description'] ?? 'Записи обраної категорії'); ?></p>
+            <p class="text-muted mb-1"><?= e($category['description'] ?? 'Записи обраної категорії'); ?></p>
+            <p class="meta mb-3">У категорії <?= category_post_count($category_id); ?> запис(ів)</p>
             <hr>
             <?php if (!$posts): ?>
                 <div class="alert alert-info">У цій категорії поки немає записів.</div>
@@ -28,6 +29,7 @@ $category = get_category_title($category_id);
                     <div class="card-footer text-muted">Дата публікації: <?= e($post['datatime']); ?></div>
                 </div>
             <?php endforeach; ?>
+            <a href="index.php" class="btn btn-outline-secondary mt-2">Повернутися до архіву</a>
         </div>
     </div>
 </main>

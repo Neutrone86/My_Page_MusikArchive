@@ -6,6 +6,9 @@ $results = search_posts($q);
 <main class="container mt-5">
     <h2>Пошук по музичному архіву</h2>
     <p class="text-muted">Результати для запиту: <strong><?= e($q); ?></strong></p>
+    <?php if (trim($q) !== ''): ?>
+        <p class="meta">Знайдено <?= count($results); ?> запис(ів)</p>
+    <?php endif; ?>
     <hr>
     <?php if (trim($q) === ''): ?>
         <div class="alert alert-info">Введіть пошуковий запит у полі навігації.</div>
@@ -22,5 +25,8 @@ $results = search_posts($q);
             </div>
         </div>
     <?php endforeach; ?>
+    <?php if (trim($q) !== '' && $results): ?>
+        <a href="index.php" class="btn btn-outline-secondary">Повернутися до архіву</a>
+    <?php endif; ?>
 </main>
 <?php require_once 'footer.php'; ?>
