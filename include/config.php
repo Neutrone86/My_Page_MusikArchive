@@ -1,10 +1,10 @@
 <?php
 // Конфігурація підключення до бази даних MySQL для проєкту "Музичний архів".
-// За потреби змініть назву БД, логін або пароль відповідно до налаштувань XAMPP/phpMyAdmin.
-$dbHost = 'localhost';
-$dbName = 'music_archive';
-$dbUser = 'root';
-$dbPass = '';
+// Для локального запуску або іншого хостингу змініть ці значення під свою базу.
+$dbHost = 'sql111.byetcluster.com';
+$dbName = 'if0_41874177_music_archive';
+$dbUser = 'if0_41874177';
+$dbPass = 'GCL4Nyh59eQ';
 $charset = 'utf8mb4';
 
 $pdo = null;
